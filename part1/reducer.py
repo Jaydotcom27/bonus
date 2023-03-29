@@ -2,17 +2,17 @@
 
 import sys
 
-prediction = dict()
-
+dic=dict()
 for line in sys.stdin:
     line = line.split("\t")
-    probability = line[0]
-    counter = float(line[1])
-    prediction[probability] = prediction.get(probability,0) + counter
+    #key: probability values yes or no depending of the color
+    prob=line[0]
+    #value
+    value=line[1]
+    dic[prob]=dic.get(prob,0)+value
 
+prob_yes=dic['Yes']
+total=dic['Yes']+dic['No']
+result=prob_yes/total
 
-prob_yes = prediction['yes']
-prod_yes_no = prediction['yes'] + prediction['no']
-final_probalility = prob_yes/(prob_yes+prod_yes_no)
-
-print("The Probability of Black vehicless parking illegally is:",final_probalility)
+print("Probability of a Black color vehicle parking is:",result)
