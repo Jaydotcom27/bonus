@@ -15,4 +15,4 @@ prob_yes = prediction['yes']
 prod_yes_no = prediction['yes'] + prediction['no']
 final_probalility = prob_yes/(prob_yes+prod_yes_no)
 
-print("The Probability of Black vehicle parking illegally is:",final_probalility)
+print("The Probability of Black vehicless parking illegally is:",final_probalility)
