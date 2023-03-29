@@ -1,25 +1,24 @@
 #!/usr/bin/python
-
 import sys
-Street = ["34510", "10030", "34050"]
-colors = ["Black", "BLK", "BK", "BK.", "BLAC", "BK/","BCK","BLK.","B LAC","BC"]
 
+street_codes=['34510','10030','34050']
+#Filter Vehicle colors values found in the range of data, there can be more values options
+black_colors= ["BLK","BK","BLACK","B K","BLAK","BLCK","BC"]
 
 for line in sys.stdin:
 
-    line = line.strip()
-    line = line.split(',')
-    len_line = len(line)
-    
-    if len_line == 43:
+    #Remove commas and splits
+    line=line.strip(',').split(',')
+    line_length=len(line)
+
+    # Checking if the length is 43 is a way to ensure the data point has all 43 attributes
+    if line_length==43:
         continue
-    
 
-    if line[33] in colors:
-        probalility = "yes"
+    if line[33] not in black_colors:
+        prob_ticket="No"
     else:
-        probalility = "no"
+        prob_ticket="Yes"
 
-    if line[9] in Street or line[10] in Street or line[11] in Street:
-
-        print(probalility+"\t"+"1")
+    if line[9] in street_codes or line[10] in street_codes or line[11] in street_codes:
+        print(prob_ticket+"\t"+"1")
