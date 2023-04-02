@@ -5,7 +5,7 @@
 /usr/local/hadoop/bin/hdfs dfs -rm -r /bonus/part1/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /bonus/part1/output/
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /bonus/part1/input/
-/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../mapreduce-test-data/hdfstest1/nyc_parking_violations_data.csv  bonus/part1/input/
+/usr/local/hadoop/bin/hdfs dfs -copyFromLocal ../mapreduce-test-data/hdfstest1/nyc_parking_violations_data.csv  /bonus/part1/input/
 
 
 /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \

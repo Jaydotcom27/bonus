@@ -16,9 +16,9 @@ for line in sys.stdin:
         continue
 
     if line[33] in black_colors:
-        prob_ticket="Yes"
+        prob_ticket='Yes'
     else:
-        prob_ticket="No"
+        prob_ticket='No'
 
     if line[9] in street_codes or line[10] in street_codes or line[11] in street_codes:
         print(prob_ticket+"\t"+"1")

@@ -8,11 +8,11 @@ for line in sys.stdin:
     #key: probability values yes or no depending of the color
     prob=line[0]
     #value
-    value=int(line[1])
+    value=float(line[1])
     dic[prob]=dic.get(prob,0)+value
 
-prob_yes=dic["Yes"]
-total=dic["Yes"]+dic["No"]
+prob_yes=dic['Yes']
+total=dic['Yes']+dic['No']
 result=prob_yes/total
 
 print("Probability of a Black color vehicle parking is:",result)
